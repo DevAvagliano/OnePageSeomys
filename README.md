@@ -3,7 +3,7 @@
 
 # Apresentação
 
-Projeto OnePage simples e responsivo, para estudo do HTML5 e CSS3 com a aplicação do SEO.
+Projeto OnePage institucional para empresa Seomys onde foi feita a correção do menu.
 
 ### Construído com
 
