@@ -1,0 +1,519 @@
+/* Importando fonts Goole */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:wght@400;700&display=swap');
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+:root {
+  font-size: 62.5%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat';
+}
+
+/* M E N U */
+header {
+  z-index: 10;
+  width: 100vw;
+  height: 16vh;
+  background-color: #fff;
+  left: auto;
+  right: auto;
+}
+
+.logo {
+  z-index: 1;
+  padding-top: 4.5rem;
+  height: 12rem;
+  width: 16rem;
+  margin-left: -5rem;
+  margin-right: 5rem;
+  position: static;
+  cursor: pointer;
+}
+.menu-content {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+  font-size: 1.55rem;
+}
+.menu-content .list-itens {
+  display: flex;
+  margin-right: 8rem;
+  list-style: none;
+  gap: 1.5rem;
+}
+.menu-content .list-itens a {
+  text-decoration: none;
+  color: #23588d;
+  padding: 1rem;
+  transform: 2ms ease-in;
+  position: relative;
+}
+.menu-content .list-itens a:before {
+  content: '';
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  width: 0rem;
+  height: 2rem;
+  background-color: #317cc2;
+  transition: all 0.5s ease-in-out;
+}
+.menu-content .list-itens a:hover:before {
+  width: 100%; /* Efeito aplicado ao passar o mouse*/
+}
+/* Theme controls how everything looks in Gallery CSS. */
+.gallery {
+  position: relative;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.gallery .item:first-of-type {
+  position: static;
+  pointer-events: auto;
+  opacity: 1;
+}
+.gallery .item {
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  pointer-events: none;
+  opacity: 0rem;
+  transition: opacity 0.5s;
+}
+.gallery .item img {
+  width: 100vw;
+  height: 75vh;
+  object-fit: cover;
+}
+.gallery .item .frame {
+  z-index: 20;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  min-width: 38rem;
+  min-height: 22rem;
+  max-width: 38rem;
+  max-height: 22rem;
+  background-color: rgba(0, 0, 0, 0.66);
+  top: 50%;
+  left: 30%;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  white-space: pre-line;
+}
+.gallery .item .frame h4 {
+  z-index: 21;
+  white-space: normal;
+  color: rgba(255, 255, 255);
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+}
+.gallery .item .frame h3 {
+  z-index: 22;
+  line-height: 3.4rem;
+  font-weight: 600;
+  font-size: 3.3rem;
+  font-family: 'Montserrat';
+  color: rgba(255, 255, 255);
+  margin-top: 0.5rem;
+}
+
+.gallery .item .frame h2 {
+  z-index: 23;
+  white-space: nowrap;
+  line-height: 0rem;
+  font-weight: 400;
+  font-size: 8.4rem;
+  font-family: 'Oswald';
+  color: rgba(245, 203, 25);
+  letter-spacing: -0.3rem;
+}
+.gallery .item .frame a {
+  z-index: 24;
+  position: absolute;
+  font-size: 1.5rem;
+  width: 12rem;
+  top: 25rem;
+  text-align: center;
+  margin-left: 0rem;
+}
+
+@keyframes gallery {
+  0% {
+    opacity: 1;
+  }
+  14.3%,
+  50% {
+    opacity: 0;
+  }
+  64.3%,
+  100% {
+    opacity: 1;
+  }
+}
+.items-2.autoplay .item {
+  animation: gallery 14s infinite;
+}
+.items-2 .item:nth-of-type(1) {
+  animation-delay: -2s;
+}
+.items-2 .item:nth-of-type(2) {
+  animation-delay: 5s;
+}
+
+
+
+/* ------------------ config animação slide fim -------------------------*/
+main {
+  background-color: #23588d;
+}
+h2 {
+  color: #317cc2;
+  font-size: 4.2rem;
+  font-weight: 700;
+  margin: 0rem 0rem 2.0rem;
+}
+h3 {
+  color: #317cc2;
+  font-size: 3.0rem;
+  font-weight: 300;
+  margin: 0rem 0rem 2.5rem;
+}
+h6 {
+  color: #404040;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 2.0rem;
+  margin-bottom: 0.5rem;
+}
+#segmentos #Cards,
+#galeria #Cards,
+#diferenciais #Cards,
+#clientes #Cards {
+  display: flex;
+  gap: 2.5rem;
+}
+#galeria .topicos,
+#diferenciais .topicos,
+#clientes .topicos {
+  padding: 5.0rem 4% 8.0rem;
+}
+
+/* -------------------- Seção Segmentos -------------------*/
+#segmentos {
+  margin-top: -0.5rem;
+  background-color: #23588d;
+  padding: 7rem 2.5rem 7rem;
+}
+#segmentos .topicos {
+  background-color: white;
+  height: auto;
+  border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+  padding: 7rem 7rem;
+}
+#segmentos .Card {
+  margin-top: 2.5rem;
+  width: 35rem;
+  height: 55rem;
+  background-color: #e8e8e8;
+  border-radius: 3.5rem 0rem 3rem 0rem;
+  text-align: center;
+}
+#segmentos img {
+  border-radius: 3rem 0rem 0rem 0rem;
+  width: 35rem;
+  margin: 0rem 0rem 2.5rem;
+}
+#diferenciais img:hover,
+#galeria img:hover,
+#segmentos img:hover {
+  transform: translatey(-0.5rem);
+  transition: ease-out 0.5s;
+}
+#segmentos p {
+  text-align: center;
+  color: #404040;
+  padding: 1rem 1rem 5rem 1rem;
+  font-size: 1.4rem;
+  margin: 0.5rem 0rem 1.5rem;
+  width: auto;
+  height: auto;
+}
+#todos {
+  margin-top: 7rem;
+  text-align: center;
+}
+#todos a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1.2rem 8rem;
+}
+
+.botao {
+  background-color: #23588d;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.1rem 2rem;
+  border-radius: 0.5rem;
+}
+.botao:hover {
+  background-color: #317cc2;
+}
+
+/* -------------------- Seção Galeria -------------------*/
+#galeria {
+  background-color: #f2f2f2;
+  background-image: url(/img/textura/seomys-texture-bg-3.png);
+  background-repeat: repeat;
+  background-position: center top;
+}
+#galeria .topicos {
+  padding: 5rem 4% 5rem;
+  max-width: 28rem;
+}
+#galeria #Cards {
+  text-align: center;
+}
+#galeria .topicos img {
+  width: 27.5rem;
+  height: 27.5rem;
+  margin-bottom: 2.5rem;
+}
+.Card img {
+  animation-name: fade;
+  animation-duration: 500ms;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* -------------------- Seção Diferenciais -------------------*/
+
+#diferenciais {
+  background-color: #f2f2f2;
+  background-image: url(/img/textura/seomys-texture-bg-1.png);
+  background-repeat: repeat;
+  background-position: center top;
+}
+
+#diferenciais .topicos {
+  padding: 5rem 4% 8rem;
+}
+#diferenciais #Cards {
+  text-align: left;
+}
+#diferenciais .Card {
+  background-color: #f1f2f3;
+}
+#diferenciais img {
+  width: 27.5rem;
+  height: 30rem;
+  margin-bottom: 2rem;
+}
+#diferenciais h2 {
+  margin-bottom: 4rem;
+}
+#diferenciais .Card h4 {
+  color: #808080;
+  width: 23.5rem;
+  padding: 2rem;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+#diferenciais #separador {
+  padding: 2rem 2rem 0.5rem;
+  width: 5rem;
+  height: 0.3rem;
+}
+
+/* -------------------- Seção Clientes -------------------*/
+#clientes .topicos {
+  text-align: center;
+}
+
+#clientes .Card {
+  margin: 2.5rem;
+  width: auto;
+  height: auto;
+  padding: 1rem 3.5rem;
+  text-align: center;
+}
+#clientes .Card:hover {
+  background-color: #e8e8e8;
+  transition: ease-in-out 1s;
+}
+
+/* -------------------- Seção Sobre -------------------*/
+
+#empresa {
+  background-color: #f0f0f0;
+  background-image: url(/img/textura/seomys-texture-bg-3.png);
+  padding: 7rem 4% 7rem;
+}
+.collum {
+  padding-bottom: 2rem;
+}
+.wrap-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wrap-b #color {
+  color: #317cc2;
+  font-size: 1.6rem;
+}
+.collum-sobre {
+  width: 38.2rem;
+}
+.wrap-b h4 {
+  color: #808080;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  vertical-align: baseline;
+}
+.wrap-b p {
+  color: #404040;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.collum-missao {
+  width: 30rem;
+  height: 19rem;
+  padding: 4rem 3.5rem 2rem;
+  border: 0.3rem solid #317cc2;
+  text-align: center;
+}
+.collum-missao #color {
+  font-size: 2.4rem;
+  margin-top: 1.5rem;
+}
+#sobre {
+  background-color: #102840;
+  padding: 5rem 4% 7rem;
+  text-align: center;
+}
+#sobre h4 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+#sobre .botao {
+  padding: 1.1rem 2rem;
+}
+
+/* -------------------- Seção Contato -------------------*/
+#contato {
+  background-color: #23588d;
+  background-image: url(/img/textura/seomys-texture-bg-2.png);
+  background-repeat: repeat;
+  background-position: center top;
+  padding: 5rem 4% 3rem;
+}
+.contato {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contato h2 {
+  font-size: 4.2rem;
+  color: #fff;
+}
+.info-contato h6,
+.info-contato a {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+.wrap {
+  height: 27.4rem;
+  padding: 0.2rem;
+}
+.info-form {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.info-form input {
+  font-size: 1.4rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+#form {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.msgarea textarea {
+  resize: none;
+  font-family: Montserrat;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.02);
+}
+.msgarea textarea:invalid {
+  border: 0.2rem solid red;
+}
+input[type='submit'] {
+  background-color: #317cc2;
+  padding: 1.1rem 2rem;
+  color: #fff;
+  border: 0.1rem solid #317cc2;
+  border-radius: 0.5rem;
+}
+input[type='submit']:hover {
+  background-color: #102840;
+  border-color: #102840;
+  transition: ease-in-out 0.5s;
+}
+#mapa {
+  z-index: 1;
+  position: absolute;
+}
+
+/* -------------------- Seção Footer -------------------*/
+.container {
+  z-index: 20;
+  display: flexbox;
+  background-color: #f0f0f0;
+  background-image: url(/img/textura/seomys-texture-bg-3.png);
+  padding: 3rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.container a {
+  text-decoration: none;
+}
